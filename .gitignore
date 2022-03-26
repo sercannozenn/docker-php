@@ -21,14 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-mysql/mysql
-mysql/performance_schema
-mysql/sys
-mysql/auto.cnf
-mysql/*.pem
-mysql/*.cnf
-mysql/ib_buffer_pool
-mysql/ib_logfile0
-mysql/ib_logfile1
-mysql/ibdata1
-mysql/ibtmp1
+docker/mysql/*
+projects/*
+docker/redis/*
