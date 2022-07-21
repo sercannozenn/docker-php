@@ -7,7 +7,7 @@ services:
       context: ./docker/php7.1
     hostname: php7.1
     ports:
-      - "9003:9000"
+      - "10003:9000"
     volumes:
       - ./projects/:/var/www/html/
       - ./docker/php7.1/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -22,7 +22,7 @@ services:
       context: ./docker/php7.3
     hostname: php7.3
     ports:
-      - "9005:9000"
+      - "10005:9000"
     volumes:
       - ./projects/:/var/www/html/
       - ./docker/php7.3/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -39,7 +39,7 @@ services:
       context: ./docker/php7
     hostname: php7
     ports:
-      - "9001:9000"
+      - "10001:9000"
     volumes:
       - ./projects/:/var/www/html/
       - ./docker/php7/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -53,7 +53,7 @@ services:
           context: ./docker/php8
       hostname: php8
       ports:
-        - "9000:9000"
+        - "10000:9000"
       volumes:
         - ./projects/:/var/www/html/
         - ./docker/php8/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -69,7 +69,7 @@ services:
       context: ./docker/php8.1
     hostname: php8.1
     ports:
-      - "9002:9000"
+      - "10002:9000"
     volumes:
       - ./projects/:/var/www/html/
       - ./docker/php8.1/www.conf:/usr/local/etc/php-fpm.d/www.conf
@@ -104,6 +104,7 @@ services:
           - "3306:3306"
         depends_on:
           - php8
+          - php8.1
           - php7
         volumes:
           - ./docker/mysql:/var/lib/mysql
