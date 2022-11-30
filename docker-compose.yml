@@ -70,6 +70,7 @@ services:
     hostname: php8.1
     ports:
       - "10002:9000"
+      - "6001:6001"
     volumes:
       - ./projects/:/var/www/html/
       - ./docker/php8.1/www.conf:/usr/local/etc/php-fpm.d/www.conf
