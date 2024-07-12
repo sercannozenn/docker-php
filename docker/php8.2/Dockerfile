@@ -1,18 +1,14 @@
-FROM php:8.0-fpm
+FROM php:8.2-fpm
 RUN apt-get update
 RUN apt-get upgrade -y
 
 RUN apt-get install libzip-dev -y
 RUN apt-get install zip unzip -y
-
 RUN apt-get install -y git
 RUN apt-get install -y curl
 
-RUN apt-get install -y nano
-RUN apt-get -y install cron
-RUN apt-get install -y supervisor
-
 RUN apt-get install -y libxml2-dev
+
 RUN apt-get install -y libldap2-dev
 
 RUN apt-get install -y libgd-dev
@@ -36,8 +32,14 @@ RUN docker-php-ext-install ctype
 RUN docker-php-ext-install fileinfo
 RUN docker-php-ext-install pdo
 RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install tokenizer
+#RUN docker-php-ext-install tokenizer
+
+RUN apt-get update -y
+RUN apt-get install cron -y
+RUN apt-get install supervisor -y
+RUN apt-get install -y nano
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN chown -R www-data:www-data /var/www/html/
 RUN chown -R www-data:www-data /var/www/html/
 

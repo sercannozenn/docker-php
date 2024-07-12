@@ -1,0 +1,1 @@
+* * * * * root /etc/php8.2/php /var/www/html/gohub8/ artisan schedule:run >> /dev/null 2>&1
